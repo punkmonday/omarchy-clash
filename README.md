@@ -64,6 +64,13 @@ are size-capped and every displayed string is rendered as plain text.
 - `ClashText.qml` — local plain-text `Text` for all dynamic strings
 - `i18n/en.json` — string catalog (other languages fall back to this)
 
+## Requirements
+
+- Omarchy (the `omarchy-shell` Quickshell process)
+- Clash Verge Rev running its mihomo core with the local API unix socket
+  enabled (the Clash Verge service default)
+- `curl` on PATH for the socket calls
+
 ## Install
 
 ```sh
@@ -72,3 +79,14 @@ omarchy plugin add https://github.com/punkmonday/omarchy-clash.git --enable
 
 Or enable a copy you already have with
 `omarchy plugin enable punkmonday.clash --section right`.
+
+## Remove
+
+```sh
+omarchy plugin remove punkmonday.clash
+```
+
+This disables the widget (removing it from the bar layout in `shell.json`)
+and deletes the git checkout; nothing else on the system is touched, and
+the plugin writes no user configuration beyond that layout entry when you
+enable it.
