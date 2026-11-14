@@ -1,0 +1,35 @@
+{
+  "clash.title": "Clash Verge",
+  "clash.offline": "Core offline — start Clash Verge",
+  "clash.mihomo": "Mihomo %1",
+  "clash.mixedPort": "mixed :%1",
+  "clash.section.mode": "Mode",
+  "clash.mode.rule": "Rule",
+  "clash.mode.global": "Global",
+  "clash.mode.direct": "Direct",
+  "clash.section.proxies": "Proxy groups",
+  "clash.noGroups": "No selectable groups",
+  "clash.auto": "auto",
+  "clash.section.traffic": "Traffic",
+  "clash.traffic.down": "Down",
+  "clash.traffic.up": "Up",
+  "clash.traffic.received": "Session received",
+  "clash.traffic.sent": "Session sent",
+  "clash.traffic.activeConnections": {
+    "one": "%1 active connection",
+    "other": "%1 active connections"
+  },
+  "clash.section.top": "Top connections",
+  "clash.section.dns": "DNS",
+  "clash.dns.unknown": "Not checked yet",
+  "clash.dns.ok": {
+    "one": "%1 answer for %2",
+    "other": "%1 answers for %2"
+  },
+  "clash.dns.empty": "No answers — the fake-IP path looks broken",
+  "clash.dns.failed": "DNS probe failed",
+  "clash.section.tools": "Tools",
+  "clash.tool.flush": "Flush fake-IP",
+  "clash.tool.verge": "Open Clash Verge",
+  "clash.tool.refresh": "Refresh"
+}

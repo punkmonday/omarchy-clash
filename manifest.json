@@ -1,0 +1,64 @@
+{
+  "schemaVersion": 1,
+  "id": "punkmonday.clash",
+  "name": "Clash Verge status",
+  "version": "1.0.0",
+  "author": "punkmonday",
+  "license": "MIT",
+  "description": "Mihomo/Clash Verge core status in the Omarchy bar: live throughput, rule/global/direct mode, TUN switch, proxy-group selection, and a DNS health probe — all read and set through the local mihomo REST API over its unix socket.",
+  "kinds": [
+    "bar-widget"
+  ],
+  "entryPoints": {
+    "barWidget": "Panel.qml"
+  },
+  "barWidget": {
+    "displayName": "Clash",
+    "description": "Clash Verge (mihomo) traffic speed, mode, TUN, proxy groups, and DNS health.",
+    "category": "Network",
+    "allowMultiple": false,
+    "defaultSection": "right",
+    "defaults": {
+      "refreshIntervalSec": 10,
+      "speedSampleSec": 2,
+      "dnsCheck": true,
+      "socketPath": ""
+    },
+    "schema": [
+      {
+        "key": "refreshIntervalSec",
+        "type": "integer",
+        "label": "Status refresh interval (seconds)",
+        "min": 3,
+        "max": 3600,
+        "step": 1,
+        "defaultValue": 10,
+        "description": "How often mode, TUN state, and proxy groups are polled from the local mihomo API. Background polling of a fixed local unix socket; no external network use."
+      },
+      {
+        "key": "speedSampleSec",
+        "type": "integer",
+        "label": "Traffic sample interval (seconds)",
+        "min": 1,
+        "max": 60,
+        "step": 1,
+        "defaultValue": 2,
+        "description": "How often session byte totals are sampled while the panel is open, to compute live down/up speeds."
+      },
+      {
+        "key": "dnsCheck",
+        "type": "boolean",
+        "label": "Probe mihomo DNS health",
+        "defaultValue": true,
+        "description": "Once a minute, asks the core's own DNS to resolve www.gstatic.com through the API. A broken fake-IP path shows up here instead of as silent 'limited connectivity'."
+      },
+      {
+        "key": "socketPath",
+        "type": "string",
+        "label": "mihomo unix socket path",
+        "defaultValue": "",
+        "description": "Override the API socket location. Empty auto-detects the Clash Verge service socket (and the core's data-dir socket as a fallback)."
+      }
+    ]
+  }
+}
