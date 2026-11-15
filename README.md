@@ -1,6 +1,6 @@
 # punkmonday.clash — Clash Verge status for the Omarchy bar
 
-![Bar preview](docs/preview.png)
+![Bar preview](preview.png)
 
 A shell plugin (not a fork of a built-in) that watches the local mihomo
 core used by Clash Verge Rev and lets you drive it without leaving the bar.
